@@ -5,7 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TravelHealthGuide"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Travel Health Guide"
+        Height="450"
+        Width="800"
+        Loaded="MainWindow_Loaded"
+        WindowStartupLocation="CenterScreen">
     <Grid>
         <StackPanel Margin="100,0,100,0" VerticalAlignment="Center">
             <Label Content="Hi, Traveler!" FontSize="30" FontWeight="Bold"/>
@@ -25,16 +29,18 @@
                         <ColumnDefinition Width="{Binding ElementName=LocationSearchBox, Path=ActualHeight}" />
                         <ColumnDefinition Width="{Binding ElementName=LocationSearchBox, Path=ActualHeight}" />
                     </Grid.ColumnDefinitions>
-                    <TextBox 
+                    <ComboBox 
                         x:Name="LocationSearchBox"
-                        Text="Enter country name..."
+                        IsEditable="True"
+                        Text=""
                         Grid.Column="0"
-                        TextWrapping="Wrap"
                         VerticalContentAlignment="Center"
                         Height="30"
-                        Padding="10,0,0,0"
+                        Margin="10, 1, 0, 1"
+                        Padding="0"
                         BorderThickness="0"
                         Background="Transparent"
+                        KeyUp="LocationSearchBox_KeyUp"
                     />
                 </Grid>
             </Border>
