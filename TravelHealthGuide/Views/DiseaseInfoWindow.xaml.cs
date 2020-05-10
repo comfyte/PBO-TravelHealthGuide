@@ -17,9 +17,17 @@ namespace TravelHealthGuide.Views
     /// </summary>
     public partial class DiseaseInfoWindow : Window
     {
-        public DiseaseInfoWindow()
+        public string countryName { get; }
+
+        public DiseaseInfoWindow(string CountryName)
         {
             InitializeComponent();
+
+            // Testing, to be changed later
+            this.countryName = CountryName;
+            CountryTitle.DataContext = this;
+
+            
         }
     }
 }

@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TravelHealthGuide.Views"
         mc:Ignorable="d"
-        Title="DiseaseInfoWindow" Height="450" Width="800">
-    <ScrollViewer>
+        Title="DiseaseInfoWindow" Height="450" Width="800" WindowStartupLocation="CenterOwner" Background="#FFFAFAFA">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="50"/>
@@ -17,6 +17,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="25"/>
                     <RowDefinition/>
+                    <RowDefinition Height="25"/>
                 </Grid.RowDefinitions>
                 
                 <StackPanel Grid.Row="1">
@@ -28,11 +29,51 @@
                             <ColumnDefinition Width="{Binding ElementName=HeaderContainer, Path=ActualHeight}"/>
                         </Grid.ColumnDefinitions>
                         
-                        <Label Grid.Column="1" HorizontalAlignment="Center" Content="Switzerland" FontWeight="Bold" FontSize="24"/>
+                        <Label x:Name="CountryTitle" Grid.Column="1" HorizontalAlignment="Center" Content="{Binding countryName}" FontWeight="Bold" FontSize="24"/>
                         
                     </Grid>
                     
                     <Label HorizontalAlignment="Center" Content="Here is what you need to know before visiting."/>
+                    
+                    <!--Add maps view here-->
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="25"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <!--FIXME-->
+                        <Grid.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="Background" Value="White"/>
+                                <Setter Property="BorderThickness" Value="0"/>
+                                <Setter Property="CornerRadius" Value="7.5"/>
+                                <Setter Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect
+                                            BlurRadius="10"
+                                            Direction="270"
+                                            ShadowDepth="4"
+                                            Opacity="0.2"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </Grid.Resources>
+                        
+                        <!--Test scrolling-->
+                        <StackPanel Grid.Column="0">
+                            <Label Content="Disease List"/>
+                            <Border Height="300"/>
+                        </StackPanel>
+                        <StackPanel Grid.Column="2">
+                            <Label Content="Vaccination Requirements"/>
+                            <Border Height="100"/>
+                            <Label Content="Recommended Actions"/>
+                            <Border Height="100"/>
+                        </StackPanel>
+                    </Grid>
                     
                 </StackPanel>
                 
