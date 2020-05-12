@@ -1,0 +1,26 @@
+﻿<Window x:Class="TravelHealthGuide.Views.AdminLoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TravelHealthGuide.Views"
+        mc:Ignorable="d"
+        Title="Login to proceed to admin console" Height="300" Width="300" ResizeMode="NoResize"
+        FocusManager.FocusedElement="{Binding ElementName=UsernameField}"
+        Background="#FFE3F2FD" WindowStartupLocation="CenterOwner">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition/>
+            <RowDefinition Height="80"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Content="Admin Access" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <StackPanel Grid.Row="1" Margin="25, 0, 25, 0" VerticalAlignment="Center">
+            <Label Content="_Username" FontWeight="Bold" Target="{Binding ElementName=UsernameField}" Padding="0,0,0,5"/>
+            <TextBox x:Name="UsernameField"/>
+            <Label Content="_Password" FontWeight="Bold" Target="{Binding ElementName=PasswordField}" Padding="0,15,0,5"/>
+            <PasswordBox x:Name="PasswordField"/>
+        </StackPanel>
+        <Button Grid.Row="2" Content="Authenticate" IsDefault="True" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10, 5, 10, 5" Click="Button_Click"/>
+    </Grid>
+</Window>

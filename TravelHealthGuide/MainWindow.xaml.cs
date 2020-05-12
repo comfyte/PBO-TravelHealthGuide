@@ -35,11 +35,17 @@ namespace TravelHealthGuide
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            var test = LocationSearchBox;
+            var SearchField = LocationSearchBox.Template.FindName("PART_EditableTextBox", LocationSearchBox) as TextBox;
+            if (SearchField != null)
+            {
+                SearchField.Focus();
+            }
 
-            var SearchField = test.Template.FindName("PART_EditableTextBox", test) as TextBox;
-            if (SearchField == null) MessageBox.Show("LocationSB is NULL!");
-            if (SearchField != null) SearchField.Focus();
+            if (String.IsNullOrEmpty(LocationSearchBox.Text))
+            {
+                GoButton.Opacity = 0.25;
+                ClearAllButton.Visibility = Visibility.Collapsed;
+            }
         }
 
         private void LocationSearchBox_KeyUp(object sender, KeyEventArgs e)
@@ -63,6 +69,34 @@ namespace TravelHealthGuide
                 textBoxBase.SelectionStart = textBoxBase.Text.Length - previousSelectionLength;
                 textBoxBase.SelectionLength = previousSelectionLength;
             }
+        }
+
+        private void LocationSearchBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (String.IsNullOrEmpty(((ComboBox)sender).Text))
+            {
+                GoButton.Opacity = 0.25;
+                ClearAllButton.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                GoButton.Opacity = 1;
+                ClearAllButton.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void ClearAllButton_Click(object sender, RoutedEventArgs e)
+        {
+            var SearchField = LocationSearchBox.Template.FindName("PART_EditableTextBox", LocationSearchBox) as TextBox;
+            SearchField.Clear();
+        }
+
+        private void AdminOptionsButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Test login window
+            Views.AdminLoginWindow loginWindow = new Views.AdminLoginWindow();
+            loginWindow.Owner = this;
+            loginWindow.ShowDialog();
         }
     }
 }

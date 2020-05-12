@@ -9,7 +9,8 @@
         Height="450"
         Width="800"
         Loaded="MainWindow_Loaded"
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen"
+        Background="#FFE3F2FD">
     <Grid>
         <StackPanel Margin="100,0,100,0" VerticalAlignment="Center">
             <Label Content="Hi, Traveler!" FontSize="30" FontWeight="Bold"/>
@@ -24,16 +25,32 @@
                     />
                 </Border.Effect>
                 <Grid>
+                    <Grid.Resources>
+                        <Style x:Key="LocationSearchBoxButtonColumn" TargetType="{x:Type ColumnDefinition}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding LocationSearchBox}" Value="">
+                                    <Setter Property="Width" Value="0"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="FontFamily" Value="Segoe MDL2 Assets"/>
+                            <Setter Property="BorderThickness" Value="0"/>
+                        </Style>
+                    </Grid.Resources>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition />
                         <ColumnDefinition Width="{Binding ElementName=LocationSearchBox, Path=ActualHeight}" />
                         <ColumnDefinition Width="{Binding ElementName=LocationSearchBox, Path=ActualHeight}" />
                     </Grid.ColumnDefinitions>
+                    <!--<Grid.Resources>
+                        
+                    </Grid.Resources>-->
                     <ComboBox 
                         x:Name="LocationSearchBox"
+                        Grid.Column="0"
                         IsEditable="True"
                         Text=""
-                        Grid.Column="0"
                         VerticalContentAlignment="Center"
                         Height="30"
                         Margin="10, 1, 0, 1"
@@ -41,9 +58,62 @@
                         BorderThickness="0"
                         Background="Transparent"
                         KeyUp="LocationSearchBox_KeyUp"
-                    />
+                        TextBoxBase.TextChanged="LocationSearchBox_TextChanged"/>
+                    <Button
+                        x:Name="ClearAllButton"
+                        Grid.Column="1"
+                        Content="&#xE894;"
+                        ToolTip="Clear All"
+                        Background="Transparent"
+                        Click="ClearAllButton_Click">
+                    </Button>
+                    <Button
+                        x:Name="GoButton"
+                        Grid.Column="2"
+                        Content="&#xE72A;"
+                        ToolTip="Go"
+                        Background="#FF0078D4"
+                        Foreground="White">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="0, 7.5, 7.5, 0"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding LocationSearchBox}" Value="">
+                                        <Setter Property="Opacity" Value="0.25"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
                 </Grid>
             </Border>
         </StackPanel>
+        <Button x:Name="AdminOptionsButton"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Background="Transparent"
+                BorderThickness="0"
+                Margin="10"
+                Click="AdminOptionsButton_Click">
+            <StackPanel Orientation="Horizontal" Margin="5,5,5,5">
+                <StackPanel.Resources>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="VerticalAlignment" Value="Center"/>
+                    </Style>
+                </StackPanel.Resources>
+                <TextBlock Text="Admin Options" FontSize="10"/>
+                <TextBlock FontFamily="Segoe MDL2 Assets"
+                           FontSize="14"
+                           Text="&#xE713;"
+                           Margin="5,0,0,0"/>
+            </StackPanel>
+        </Button>
+        <Label HorizontalAlignment="Right"
+               VerticalAlignment="Bottom"
+               Margin="10,10,20,10"
+               Padding="0"
+               FontSize="8"
+               Opacity="0.5"
+               Content="Background image by John on Unsplash"/>
     </Grid>
 </Window>
