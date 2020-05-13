@@ -14,14 +14,14 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.Resources>
-            <Style TargetType="GroupBox">
+            <Style TargetType="{x:Type GroupBox}">
                 <Setter Property="BorderBrush" Value="Black"/>
             </Style>
-            <Style TargetType="StackPanel">
+            <Style TargetType="{x:Type StackPanel}">
                 <Setter Property="VerticalAlignment" Value="Center"/>
                 <Setter Property="HorizontalAlignment" Value="Center"/>
             </Style>
-            <Style TargetType="Label">
+            <Style TargetType="{x:Type Label}">
                 <Setter Property="HorizontalAlignment" Value="Center"/>
                 <Setter Property="FontWeight" Value="Bold"/>
             </Style>

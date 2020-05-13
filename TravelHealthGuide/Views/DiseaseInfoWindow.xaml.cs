@@ -9,6 +9,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TravelHealthGuide.ViewModels;
 
 namespace TravelHealthGuide.Views
 {
@@ -17,17 +18,13 @@ namespace TravelHealthGuide.Views
     /// </summary>
     public partial class DiseaseInfoWindow : Window
     {
-        public string countryName { get; }
+        private DiseaseInfoViewModel viewmodel;
 
-        public DiseaseInfoWindow(string CountryName)
+        public DiseaseInfoWindow(string countryName)
         {
             InitializeComponent();
-
-            // Testing, to be changed later
-            this.countryName = CountryName;
-            CountryTitle.DataContext = this;
-
-            
+            viewmodel = new DiseaseInfoViewModel(countryName);
+            this.DataContext = viewmodel;
         }
     }
 }

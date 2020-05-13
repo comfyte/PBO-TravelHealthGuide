@@ -9,6 +9,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TravelHealthGuide.ViewModels;
 
 namespace TravelHealthGuide.Views
 {
@@ -17,19 +18,23 @@ namespace TravelHealthGuide.Views
     /// </summary>
     public partial class AdminLoginWindow : Window
     {
+        private readonly AdminLoginViewModel _viewmodel;
+
         public AdminLoginWindow()
         {
             InitializeComponent();
+            _viewmodel = new AdminLoginViewModel();
+            this.DataContext = _viewmodel;
         }
 
-        //FIXME
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            AdminOptionsWindow w = new AdminOptionsWindow();
-            w.Owner = Application.Current.MainWindow;
-            w.ShowDialog();
-            this.Hide();
-            this.Close();
+            _viewmodel.Authenticate(PasswordField.Password);
+            //AdminOptionsWindow w = new AdminOptionsWindow();
+            //w.Owner = Application.Current.MainWindow;
+            //w.ShowDialog();
+            //this.Hide();
+            //this.Close();
         }
     }
 }

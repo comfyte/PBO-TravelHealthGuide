@@ -17,7 +17,7 @@
         <Label Grid.Row="0" Content="Admin Access" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <StackPanel Grid.Row="1" Margin="25, 0, 25, 0" VerticalAlignment="Center">
             <Label Content="_Username" FontWeight="Bold" Target="{Binding ElementName=UsernameField}" Padding="0,0,0,5"/>
-            <TextBox x:Name="UsernameField"/>
+            <TextBox x:Name="UsernameField" Text="{Binding Path=Username, UpdateSourceTrigger=PropertyChanged}"/>
             <Label Content="_Password" FontWeight="Bold" Target="{Binding ElementName=PasswordField}" Padding="0,15,0,5"/>
             <PasswordBox x:Name="PasswordField"/>
         </StackPanel>

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TravelHealthGuide.BusinessLogic
+namespace TravelHealthGuide.Models
 {
     class DiseaseData
     {

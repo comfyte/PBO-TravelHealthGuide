@@ -52,7 +52,7 @@
                             <ColumnDefinition Width="{Binding ElementName=HeaderContainer, Path=ActualHeight}"/>
                         </Grid.ColumnDefinitions>
                         
-                        <Label x:Name="CountryTitle" Grid.Column="1" Style="{StaticResource LightText}" HorizontalAlignment="Center" Content="{Binding countryName, FallbackValue='Could not load country name'}" FontWeight="Bold" FontSize="24"/>
+                        <Label x:Name="CountryTitle" Grid.Column="1" Style="{StaticResource LightText}" HorizontalAlignment="Center" Content="{Binding CountryName, FallbackValue='Could not load country name'}" FontWeight="Bold" FontSize="24"/>
                         
                     </Grid>
                     
