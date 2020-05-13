@@ -22,9 +22,6 @@ namespace TravelHealthGuide.Models.DatabaseModels
         {
             DestinationsSeed seed = new DestinationsSeed();
             modelBuilder.Entity<DestinationInfo>().HasData(seed.Items);
-
-            MessageBox.Show("Database is being initialized for the first time.");
-            //}
         }
     }
 }

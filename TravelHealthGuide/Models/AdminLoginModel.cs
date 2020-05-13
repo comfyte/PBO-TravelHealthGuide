@@ -9,7 +9,7 @@ namespace TravelHealthGuide.Models
     {
         public bool Authenticate(string Username, string Password)
         {
-            if (Username == "comfyte" && Password == "cfy")
+            if (Username == "a" && Password == "a")
             {
                 return true;
             }

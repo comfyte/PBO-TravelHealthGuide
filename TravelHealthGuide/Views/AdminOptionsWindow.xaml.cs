@@ -9,6 +9,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TravelHealthGuide.ViewModels;
 
 namespace TravelHealthGuide.Views
 {
@@ -17,9 +18,13 @@ namespace TravelHealthGuide.Views
     /// </summary>
     public partial class AdminOptionsWindow : Window
     {
+        private readonly AdminOptionsViewModel _viewmodel;
+
         public AdminOptionsWindow()
         {
             InitializeComponent();
+            _viewmodel = new AdminOptionsViewModel();
+            this.DataContext = _viewmodel;
         }
 
         private void AdminOptionsWindow_OnClosing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -33,6 +38,18 @@ namespace TravelHealthGuide.Views
             {
                 Owner.Focus();
             }
+        }
+
+        private void OpenDBLocationButton_Click(object sender, RoutedEventArgs e)
+        {
+            _viewmodel.OpenDatabaseDirectory();
+        }
+
+        private void DeleteCountryButton_Click(object sender, RoutedEventArgs e)
+        {
+            RemoveDiseaseEntryWindow w = new RemoveDiseaseEntryWindow();
+            w.Owner = this;
+            w.Show();
         }
     }
 }

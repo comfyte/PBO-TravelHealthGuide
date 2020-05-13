@@ -43,10 +43,9 @@
                 <Label Content="There are currently 130 countries registered on database"/>
                 <Button Content="Add a country data"/>
                 <Button Content="Modify a country data"/>
-                <Button Content="Delete a country data"/>
-                <Button Content="Open database location"/>
-                <Button Content="Reset and regenerate database"/>
-                <TextBlock Text="Database path: C:\ierfe\fe\afewFW\EFWFrfefe\awf\vrtegavrdfcawesfdcdgbtgrsedscvf3 w"/>
+                <Button x:Name="DeleteCountryButton" Content="Delete a country data" Click="DeleteCountryButton_Click"/>
+                <Button x:Name="OpenDBLocationButton" Content="Open database location" Click="OpenDBLocationButton_Click"/>
+                <TextBlock Text="{Binding DatabasePathText}"/>
             </StackPanel>
         </GroupBox>
         <GroupBox Grid.Column="2" Header="User Management">

@@ -18,15 +18,15 @@ namespace TravelHealthGuide.Views
     /// </summary>
     public partial class DiseaseInfoWindow : Window
     {
-        private DiseaseInfoViewModel viewmodel;
+        private DiseaseInfoViewModel _viewmodel;
 
         public List<string> LSoT;
 
         public DiseaseInfoWindow(string countryName)
         {
             InitializeComponent();
-            viewmodel = new DiseaseInfoViewModel(countryName);
-            this.DataContext = viewmodel;
+            _viewmodel = new DiseaseInfoViewModel(countryName);
+            this.DataContext = _viewmodel;
             ///testing
             //LSoT = new List<string>
             //{
