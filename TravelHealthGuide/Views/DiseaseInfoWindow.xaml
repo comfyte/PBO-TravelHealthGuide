@@ -68,10 +68,20 @@
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
                                                 
-                        <!--Test scrolling-->
                         <StackPanel Grid.Column="0">
                             <Label Style="{StaticResource LightText}" Content="Disease List"/>
-                            <Border Height="300"/>
+                            <Border>
+                                <ListView ItemsSource="{Binding LSoT}" Background="Transparent">
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <StackPanel>
+                                                <Label Content="{Binding Name}"/>
+                                                <Label Content="{Binding Description}"/>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                            </Border>
                         </StackPanel>
                         <StackPanel Grid.Column="2">
                             <Label Style="{StaticResource LightText}" Content="Vaccination Requirements"/>

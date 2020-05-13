@@ -20,11 +20,18 @@ namespace TravelHealthGuide.Views
     {
         private DiseaseInfoViewModel viewmodel;
 
+        public List<string> LSoT;
+
         public DiseaseInfoWindow(string countryName)
         {
             InitializeComponent();
             viewmodel = new DiseaseInfoViewModel(countryName);
             this.DataContext = viewmodel;
+            ///testing
+            //LSoT = new List<string>
+            //{
+            //    "Malaria\nY"
+            //}
         }
     }
 }

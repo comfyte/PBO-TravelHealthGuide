@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TravelHealthGuide.Models.DatabaseModels;
 
 namespace TravelHealthGuide
 {
@@ -31,6 +32,14 @@ namespace TravelHealthGuide
             comboboxContents = countries.Split(", ").ToList();
 
             LocationSearchBox.ItemsSource = comboboxContents;
+
+            // Test DB
+            //using (var db = new databaseContext())
+            //{
+            //    var Countries = db.Destinations
+            //        .OrderBy(n => n.CountryName);
+            //    MessageBox.Show(Countries.GetType().ToString());
+            //}
         }
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
