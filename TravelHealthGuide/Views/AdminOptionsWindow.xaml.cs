@@ -20,10 +20,10 @@ namespace TravelHealthGuide.Views
     {
         private readonly AdminOptionsViewModel _viewmodel;
 
-        public AdminOptionsWindow()
+        public AdminOptionsWindow(string user)
         {
             InitializeComponent();
-            _viewmodel = new AdminOptionsViewModel();
+            _viewmodel = new AdminOptionsViewModel(user);
             this.DataContext = _viewmodel;
         }
 
@@ -57,6 +57,18 @@ namespace TravelHealthGuide.Views
             AddNewUserEntryWindow w = new AddNewUserEntryWindow();
             w.Owner = this;
             w.ShowDialog();
+        }
+
+        private void RemoveUserButton_Click(object sender, RoutedEventArgs e)
+        {
+            RemoveUserEntryWindow w = new RemoveUserEntryWindow();
+            w.Owner = this;
+            w.ShowDialog();
+        }
+
+        private void ChangeUserPasswordButton_Click(object sender, RoutedEventArgs e)
+        {
+            _viewmodel.ChangeUserPassword();
         }
     }
 }

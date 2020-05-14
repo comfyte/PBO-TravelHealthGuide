@@ -10,26 +10,25 @@ namespace TravelHealthGuide.ViewModels
     {
         private readonly AdminLoginModel _model;
 
-        public string Username { get; set; }
+        public string Username { private get; set; }
 
         public AdminLoginViewModel()
         {
             _model = new AdminLoginModel();
         }
 
-        public void Authenticate(string Password)
+        public bool Authenticate(string Password)
         {
             bool isAuthenticated = _model.Authenticate(Username, Password);
             if (isAuthenticated)
             {
-                Views.AdminOptionsWindow w = new Views.AdminOptionsWindow();
+                Views.AdminOptionsWindow w = new Views.AdminOptionsWindow(Username);
                 w.Owner = Application.Current.MainWindow;
                 w.Show();
+                return true;
             }
-            else
-            {
-                MessageBox.Show("wrong combination");
-            }
+            MessageBox.Show("Invalid username or password", "Could not authenticate", MessageBoxButton.OK, MessageBoxImage.Error);
+            return false;
         }
     }
 }

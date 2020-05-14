@@ -31,22 +31,15 @@ namespace TravelHealthGuide.Views
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            _viewmodel.Authenticate(PasswordField.Password);
+            bool Success = _viewmodel.Authenticate(PasswordField.Password);
             //AdminOptionsWindow w = new AdminOptionsWindow();
             //w.Owner = Application.Current.MainWindow;
             //w.ShowDialog();
             //this.Hide();
-            //this.Close();
-            //using (var db = new DataBase())
-            //{
-            //    db.Add(new UserInfo
-            //    {
-            //        Username = "testuser",
-            //        HashedPassword = PasswordHasher.Hash("testuser")
-            //    });
-            //    db.SaveChanges();
-            //    MessageBox.Show("New temp user created");
-            //}
+            if (Success)
+            {
+                this.Close();
+            }
         }
     }
 }

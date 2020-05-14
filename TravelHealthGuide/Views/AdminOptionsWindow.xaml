@@ -52,9 +52,9 @@
             <StackPanel>
                 <Label Content="There are 3 authorized users with admin access"/>
                 <Button x:Name="CreateUserButton" Content="Add new authorized user" Click="CreateUserButton_Click"/>
-                <Button Content="Remove an authorized user"/>
-                <Button Content="Change my password"/>
-                <TextBlock Text="You are logged in as LolCat"/>
+                <Button x:Name="RemoveUserButton" Content="Remove an authorized user" Click="RemoveUserButton_Click"/>
+                <Button x:Name="ChangeUserPasswordButton" Content="Change my password" Click="ChangeUserPasswordButton_Click"/>
+                <TextBlock Text="{Binding Path=CurrentUserText, FallbackValue='Could not detect current user'}"/>
             </StackPanel>
         </GroupBox>
     </Grid>
