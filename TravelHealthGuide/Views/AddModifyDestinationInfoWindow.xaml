@@ -1,0 +1,59 @@
+﻿<Window x:Class="TravelHealthGuide.Views.AddModifyDestinationInfoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TravelHealthGuide.Views"
+        mc:Ignorable="d"
+        Title="AddModifyDestinationInfoWindow" Height="500" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid Margin="25">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="25"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0"
+               Grid.ColumnSpan="3"
+               Content="Direction: Title and description are separated by a newline. Each items are separated by two newlines."
+               HorizontalAlignment="Center"
+               FontSize="10"
+               FontStyle="Italic"/>
+        <Grid Grid.Column="0" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Content="Country Name"/>
+            <TextBox Text="{Binding Path=CountryName}" Grid.Row="1"/>
+            <Label Grid.Row="2" Content="Country Code"/>
+            <TextBox Text="{Binding Path=CountryCode}" Grid.Row="3"/>
+            <Label Grid.Row="4" Content="Disease Risks"/>
+            <TextBox Text="{Binding Path=DiseaseRisks}" Grid.Row="5" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"/>
+        </Grid>
+        <Grid Grid.Column="2" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition/>
+                <RowDefinition Height="30"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Content="Vaccination Requirements"/>
+            <TextBox Text="{Binding Path=VaccinationRequirements}" Grid.Row="1"/>
+            <Label Grid.Row="2" Content="Recommended Actions"/>
+            <TextBox Text="{Binding Path=RecommendedActions}" Grid.Row="3"/>
+        </Grid>
+        <StackPanel Grid.Row="2" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Content="Save Changes" Padding="10,5,10,5" Click="SaveChangesButton_Click"/>
+            <Button Content="Cancel" Padding="10,5,10,5" Margin="20,0,0,0" Click="CancelButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

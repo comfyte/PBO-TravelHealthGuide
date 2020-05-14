@@ -1,0 +1,19 @@
+﻿<Window x:Class="TravelHealthGuide.Views.ModifyDestinationSelectorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TravelHealthGuide.Views"
+        mc:Ignorable="d"
+        Title="ModifyDestinationSelector" Height="150" Width="300" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Content="Select country to modify" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <ComboBox Grid.Row="1" ItemsSource="{Binding CountryDataSource}" SelectedValue="{Binding Selected}" IsEditable="True" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="20,0,20,0"/>
+        <Button Grid.Row="2" Content="Modify" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="10,5,10,5" Click="Button_Click"/>
+    </Grid>
+</Window>

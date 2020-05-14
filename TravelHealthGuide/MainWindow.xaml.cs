@@ -111,5 +111,12 @@ namespace TravelHealthGuide
             loginWindow.Owner = this;
             loginWindow.ShowDialog();
         }
+
+        private void GoButton_Click(object sender, RoutedEventArgs e)
+        {
+            Views.DiseaseInfoWindow secondWindow = new Views.DiseaseInfoWindow(LocationSearchBox.Text);
+            secondWindow.Owner = this;
+            secondWindow.Show();
+        }
     }
 }

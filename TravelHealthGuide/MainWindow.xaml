@@ -10,7 +10,7 @@
         Width="800"
         Loaded="MainWindow_Loaded"
         WindowStartupLocation="CenterScreen"
-        Background="#FFE3F2FD">
+        Background="#FFFAFAFA">
     <Grid>
         <StackPanel Margin="100,0,100,0" VerticalAlignment="Center">
             <Label Content="Hi, Traveler!" FontSize="30" FontWeight="Bold"/>
@@ -73,7 +73,8 @@
                         Content="&#xE72A;"
                         ToolTip="Go"
                         Background="#FF0078D4"
-                        Foreground="White">
+                        Foreground="White"
+                        Click="GoButton_Click">
                         <Button.Resources>
                             <Style TargetType="Border">
                                 <Setter Property="CornerRadius" Value="0, 7.5, 7.5, 0"/>

@@ -41,5 +41,17 @@ namespace TravelHealthGuide.ViewModels
             //w.Owner = Window.GetWindow(AdminOptionsWindow);
             w.Show();
         }
+
+        public void ModifyCountryData()
+        {
+            ModifyDestinationSelectorWindow w = new ModifyDestinationSelectorWindow();
+            w.Show();
+        }
+
+        public void AddCountryData()
+        {
+            AddModifyDestinationInfoWindow w = new AddModifyDestinationInfoWindow();
+            w.Show();
+        }
     }
 }

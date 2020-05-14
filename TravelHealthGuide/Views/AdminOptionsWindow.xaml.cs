@@ -70,5 +70,15 @@ namespace TravelHealthGuide.Views
         {
             _viewmodel.ChangeUserPassword();
         }
+
+        private void ModifyCountryDataButton_Click(object sender, RoutedEventArgs e)
+        {
+            _viewmodel.ModifyCountryData();
+        }
+
+        private void AddCountryDataButton_Click(object sender, RoutedEventArgs e)
+        {
+            _viewmodel.AddCountryData();
+        }
     }
 }
