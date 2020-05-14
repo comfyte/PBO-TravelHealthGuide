@@ -6,7 +6,7 @@ using TravelHealthGuide.Models;
 
 namespace TravelHealthGuide.ViewModels
 {
-    class AdminLoginViewModel
+    public class AdminLoginViewModel
     {
         private readonly AdminLoginModel _model;
 
@@ -19,7 +19,6 @@ namespace TravelHealthGuide.ViewModels
 
         public void Authenticate(string Password)
         {
-            //MessageBox.Show("Password: " + Password, "Username: " + this.Username);
             bool isAuthenticated = _model.Authenticate(Username, Password);
             if (isAuthenticated)
             {

@@ -51,5 +51,12 @@ namespace TravelHealthGuide.Views
             w.Owner = this;
             w.Show();
         }
+
+        private void CreateUserButton_Click(object sender, RoutedEventArgs e)
+        {
+            AddNewUserEntryWindow w = new AddNewUserEntryWindow();
+            w.Owner = this;
+            w.ShowDialog();
+        }
     }
 }

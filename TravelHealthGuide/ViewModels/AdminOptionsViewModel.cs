@@ -5,7 +5,7 @@ using TravelHealthGuide.Models;
 
 namespace TravelHealthGuide.ViewModels
 {
-    class AdminOptionsViewModel
+    public class AdminOptionsViewModel
     {
         private readonly AdminOptionsModel _model;
 

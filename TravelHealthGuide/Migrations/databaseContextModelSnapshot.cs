@@ -6,7 +6,7 @@ using TravelHealthGuide.Models.DatabaseModels;
 
 namespace TravelHealthGuide.Migrations
 {
-    [DbContext(typeof(databaseContext))]
+    [DbContext(typeof(DataBase))]
     partial class databaseContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

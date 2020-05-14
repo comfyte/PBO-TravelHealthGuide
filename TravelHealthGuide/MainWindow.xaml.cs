@@ -35,7 +35,7 @@ namespace TravelHealthGuide
 
             List<string> Countries;
             // Test DB
-            using (var db = new databaseContext())
+            using (var db = new DataBase())
             {
                 Countries = db.Destinations
                     .OrderBy(n => n.CountryName)

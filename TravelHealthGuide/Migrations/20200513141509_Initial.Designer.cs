@@ -7,7 +7,7 @@ using TravelHealthGuide.Models.DatabaseModels;
 
 namespace TravelHealthGuide.Migrations
 {
-    [DbContext(typeof(databaseContext))]
+    [DbContext(typeof(DataBase))]
     [Migration("20200513141509_Initial")]
     partial class Initial
     {

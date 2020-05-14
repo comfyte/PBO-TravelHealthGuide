@@ -9,6 +9,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TravelHealthGuide.Models;
+using TravelHealthGuide.Models.DatabaseModels;
 using TravelHealthGuide.ViewModels;
 
 namespace TravelHealthGuide.Views
@@ -35,6 +37,16 @@ namespace TravelHealthGuide.Views
             //w.ShowDialog();
             //this.Hide();
             //this.Close();
+            //using (var db = new DataBase())
+            //{
+            //    db.Add(new UserInfo
+            //    {
+            //        Username = "testuser",
+            //        HashedPassword = PasswordHasher.Hash("testuser")
+            //    });
+            //    db.SaveChanges();
+            //    MessageBox.Show("New temp user created");
+            //}
         }
     }
 }

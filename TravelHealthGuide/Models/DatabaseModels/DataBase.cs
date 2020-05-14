@@ -3,21 +3,25 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows;
 using Microsoft.EntityFrameworkCore;
+using TravelHealthGuide.Models.DatabaseModels.Seeds;
 
 namespace TravelHealthGuide.Models.DatabaseModels
 {
-    public class databaseContext : DbContext
+    public class DataBase : DbContext
     {
-        public databaseContext()
-        {
-            Database.Migrate();
-        }
         public DbSet<DestinationInfo> Destinations { get; set; }
         public DbSet<UserInfo> Users { get; set; }
+
+        public DataBase()
+        {
+            // Memastikan database sudah terbuat
+            Database.Migrate();
+        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
             => optionsBuilder.UseSqlite("Data Source=TravelHealthGuide.db");
 
+        // Default values
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             DestinationsSeed seed = new DestinationsSeed();

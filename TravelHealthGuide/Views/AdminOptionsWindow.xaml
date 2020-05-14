@@ -45,13 +45,13 @@
                 <Button Content="Modify a country data"/>
                 <Button x:Name="DeleteCountryButton" Content="Delete a country data" Click="DeleteCountryButton_Click"/>
                 <Button x:Name="OpenDBLocationButton" Content="Open database location" Click="OpenDBLocationButton_Click"/>
-                <TextBlock Text="{Binding DatabasePathText}"/>
+                <TextBlock Text="{Binding Path=DatabasePathText, FallbackValue='Could not retrieve database path'}"/>
             </StackPanel>
         </GroupBox>
         <GroupBox Grid.Column="2" Header="User Management">
             <StackPanel>
                 <Label Content="There are 3 authorized users with admin access"/>
-                <Button Content="Add new authorized user"/>
+                <Button x:Name="CreateUserButton" Content="Add new authorized user" Click="CreateUserButton_Click"/>
                 <Button Content="Remove an authorized user"/>
                 <Button Content="Change my password"/>
                 <TextBlock Text="You are logged in as LolCat"/>

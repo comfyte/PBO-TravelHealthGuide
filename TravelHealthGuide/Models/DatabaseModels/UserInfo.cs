@@ -10,7 +10,9 @@ namespace TravelHealthGuide.Models.DatabaseModels
         [Key]
         public int UserID { get; set; }
 
+        [Required]
         public string Username { get; set; }
+        [Required]
         public string HashedPassword { get; set; }
     }
 }

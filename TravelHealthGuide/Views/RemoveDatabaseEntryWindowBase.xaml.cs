@@ -13,7 +13,7 @@ using System.Windows.Shapes;
 namespace TravelHealthGuide.Views
 {
     /// <summary>
-    /// Interaction logic for RemoveDatabaseEntryWindow.xaml
+    /// Abstract class untuk diturunkan ke RemoveDiseaseEntryWindow dan RemoveUserEntryWindow
     /// </summary>
     public abstract partial class RemoveDatabaseEntryWindowBase : Window
     {
