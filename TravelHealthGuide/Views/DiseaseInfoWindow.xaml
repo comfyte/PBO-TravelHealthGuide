@@ -12,88 +12,98 @@
         </Style>
     </Window.Resources>
     <ScrollViewer VerticalScrollBarVisibility="Auto">
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="50"/>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="50"/>
-            </Grid.ColumnDefinitions>
-            <Grid Grid.Column="1">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="25"/>
-                    <RowDefinition/>
-                    <RowDefinition Height="25"/>
-                </Grid.RowDefinitions>
-
-                <StackPanel Grid.Row="1">
-                    
-                    <!--FIXME-->
-                    <StackPanel.Resources>
+        <Grid Margin="50, 25, 50, 25">
+            
+            <Grid.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="Background" Value="White"/>
+                    <Setter Property="BorderThickness" Value="0"/>
+                    <Setter Property="CornerRadius" Value="7.5"/>
+                    <Setter Property="Effect">
+                        <Setter.Value>
+                            <DropShadowEffect
+                                        BlurRadius="10"
+                                        Direction="270"
+                                        ShadowDepth="4"
+                                        Opacity="0.2"/>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+                <Style TargetType="{x:Type ListView}">
+                    <Setter Property="BorderThickness" Value="0"/>
+                </Style>
+                <Style TargetType="{x:Type ListViewItem}">
+                    <Setter Property="BorderThickness" Value="0"/>
+                    <Setter Property="Background" Value="Gray"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="LightGray"/>
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Foreground" Value="Black"/>
+                        </Trigger>
+                    </Style.Triggers>
+                    <Style.Resources>
                         <Style TargetType="Border">
-                            <Setter Property="Background" Value="White"/>
-                            <Setter Property="BorderThickness" Value="0"/>
                             <Setter Property="CornerRadius" Value="7.5"/>
-                            <Setter Property="Effect">
-                                <Setter.Value>
-                                    <DropShadowEffect
-                                            BlurRadius="10"
-                                            Direction="270"
-                                            ShadowDepth="4"
-                                            Opacity="0.2"/>
-                                </Setter.Value>
-                            </Setter>
                         </Style>
-                    </StackPanel.Resources>
-                    
-                    <Grid x:Name="HeaderContainer">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="{Binding ElementName=HeaderContainer, Path=ActualHeight}"/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition Width="{Binding ElementName=HeaderContainer, Path=ActualHeight}"/>
-                        </Grid.ColumnDefinitions>
-                        
-                        <Label x:Name="CountryTitle" Grid.Column="1" Style="{StaticResource LightText}" HorizontalAlignment="Center" Content="{Binding Path=CountryName, FallbackValue='Could not load country name'}" FontWeight="Bold" FontSize="24"/>
-                        
-                    </Grid>
-                    
-                    <Label Style="{StaticResource LightText}" HorizontalAlignment="Center" Content="Here is what you need to know before visiting."/>
-                    
-                    <!--Add maps view below-->
-                    <Border Height="150"></Border>
+                    </Style.Resources>
+                </Style>
+            </Grid.Resources>
 
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition/>
-                            <ColumnDefinition Width="25"/>
-                            <ColumnDefinition/>
-                        </Grid.ColumnDefinitions>
-                                                
-                        <StackPanel Grid.Column="0">
-                            <Label Style="{StaticResource LightText}" Content="Disease List"/>
-                            <Border>
-                                <ListView ItemsSource="{Binding LSoT}" Background="Transparent">
-                                    <ListView.ItemTemplate>
-                                        <DataTemplate>
-                                            <StackPanel>
-                                                <Label Content="{Binding Name}"/>
-                                                <Label Content="{Binding Description}"/>
-                                            </StackPanel>
-                                        </DataTemplate>
-                                    </ListView.ItemTemplate>
-                                </ListView>
-                            </Border>
-                        </StackPanel>
-                        <StackPanel Grid.Column="2">
-                            <Label Style="{StaticResource LightText}" Content="Vaccination Requirements"/>
-                            <Border Height="100"/>
-                            <Label Style="{StaticResource LightText}" Content="Recommended Actions"/>
-                            <Border Height="100"/>
-                        </StackPanel>
-                    </Grid>
-                    
-                </StackPanel>
-                
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/> <!--Country map-->
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="25"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Row="0" Grid.ColumnSpan="3" x:Name="HeaderContainer">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="{Binding ElementName=HeaderContainer, Path=ActualHeight}"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="{Binding ElementName=HeaderContainer, Path=ActualHeight}"/>
+                </Grid.ColumnDefinitions>
+
+                <Label x:Name="CountryTitle" Grid.Column="1" Style="{StaticResource LightText}" HorizontalAlignment="Center" Content="{Binding Path=CountryName, FallbackValue='Could not load country name'}" FontWeight="Bold" FontSize="24"/>
+
             </Grid>
+
+            <Label Grid.Row="1" Grid.ColumnSpan="3" Style="{StaticResource LightText}" HorizontalAlignment="Center" Content="Here is what you need to know before visiting."/>
+
+            <Border Grid.Row="2" Grid.ColumnSpan="3" Height="50"></Border>
+            
+            <!--Left-->
+            <Label Grid.Row="3" Grid.Column="0" Style="{StaticResource LightText}" Content="Disease List"/>
+            <Border Grid.Row="4" Grid.Column="0" Grid.RowSpan="3">
+                <ListView ItemsSource="{Binding LSoT}" Background="Transparent">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Label Content="{Binding}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Border>
+
+            <!--Right top-->
+            <Label Grid.Row="3" Grid.Column="2" Style="{StaticResource LightText}" Content="Vaccination Requirements"/>
+            <Border Grid.Row="4" Grid.Column="2"/>
+            
+            <!--Right bottom-->
+            <Label Grid.Row="5" Grid.Column="2" Style="{StaticResource LightText}" Content="Recommended Actions"/>
+            <Border Grid.Row="6" Grid.Column="2"/>
+            
         </Grid>
     </ScrollViewer>
 </Window>

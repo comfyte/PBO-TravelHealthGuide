@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TravelHealthGuide.Models
 {
-    class DiseaseInfoModel
+    public class DiseaseInfoModel
     {
     }
 }
