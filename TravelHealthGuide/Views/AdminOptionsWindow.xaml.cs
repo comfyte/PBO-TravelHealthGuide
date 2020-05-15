@@ -49,7 +49,7 @@ namespace TravelHealthGuide.Views
         {
             RemoveDiseaseEntryWindow w = new RemoveDiseaseEntryWindow();
             w.Owner = this;
-            w.Show();
+            w.ShowDialog();
         }
 
         private void CreateUserButton_Click(object sender, RoutedEventArgs e)

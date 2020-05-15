@@ -18,8 +18,6 @@ namespace TravelHealthGuide.Views
             _viewmodel = new RemoveUserEntryViewModel();
             this.DataContext = _viewmodel;
 
-            //ItemsSourceBinding = new Binding("DataSource");
-
             base.AddColumns(new List<GridViewColumn>
             {
                 base.GenerateColumns("ID", 30, "UserID"),

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TravelHealthGuide.Views"
         mc:Ignorable="d"
-        Title="RemoveDatabaseEntryWindowBase" Height="300" Width="600"
+        Title="Remove An Entry" Height="300" Width="600"
         Background="#FFE3F2FD" WindowStartupLocation="CenterOwner">
     <Grid>
         <Grid.RowDefinitions>
@@ -14,14 +14,7 @@
         </Grid.RowDefinitions>
         <ListView Grid.Row="0" ItemsSource="{Binding Path=DataSource}" SelectedItem="{Binding Path=SelectedItem, Mode=OneWayToSource}" Margin="20,20,20,0">
             <ListView.View>
-                <GridView x:Name="TableView">
-                    <!--<GridViewColumn Header="ID" Width="25" DisplayMemberBinding="{Binding Id}"/>
-                    <GridViewColumn Header="Country Name" Width="150" DisplayMemberBinding="{Binding CountryName}"/>
-                    <GridViewColumn Header="Code" Width="40" DisplayMemberBinding="{Binding CountryCode}"/>
-                    <GridViewColumn Header="Disease Risks" Width="180" DisplayMemberBinding="{Binding DiseaseRisks}"/>
-                    <GridViewColumn Header="Vaccination Requirements" Width="180" DisplayMemberBinding="{Binding VaccinationRequirements}"/>
-                    <GridViewColumn Header="Recommended Actions" Width="180" DisplayMemberBinding="{Binding RecommendedActions}"/>-->
-                </GridView>
+                <GridView x:Name="TableView"/>
             </ListView.View>
         </ListView>
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">

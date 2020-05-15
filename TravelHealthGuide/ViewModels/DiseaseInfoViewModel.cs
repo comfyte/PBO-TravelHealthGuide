@@ -12,6 +12,11 @@ namespace TravelHealthGuide.ViewModels
 
         public string CountryName { get; }
 
+        public string WindowTitle
+        {
+            get { return "Information for " + CountryName; }
+        }
+
         public bool Success
         {
             get { return _model.Found(); }
@@ -47,6 +52,9 @@ namespace TravelHealthGuide.ViewModels
 
         private List<string> Listify(string plainString)
         {
+            if (String.IsNullOrEmpty(plainString))
+                return new List<string> { "None" };
+
             return plainString.Replace(": ", Environment.NewLine).Split("&& ").ToList();
         }
     }

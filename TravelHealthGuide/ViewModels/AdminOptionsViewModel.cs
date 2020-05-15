@@ -11,6 +11,18 @@ namespace TravelHealthGuide.ViewModels
     {
         private readonly AdminOptionsModel _model;
 
+        private int _countryCount;
+        public string CountryCountText
+        {
+            get { return "There are currently " + _countryCount.ToString() + " countries registered on database"; }
+        }
+
+        private int _userCount;
+        public string UserCountText
+        {
+            get { return "There are " + _userCount.ToString() + " authorized users with admin access"; }
+        }
+
         private string _databasePath;
         public string DatabasePathText
         {
@@ -26,8 +38,12 @@ namespace TravelHealthGuide.ViewModels
         public AdminOptionsViewModel(string user)
         {
             _model = new AdminOptionsModel();
+
             _databasePath = _model.GetCurrentWorkingDirectory() + "\\TravelHealthGuide.db";
             _currentUser = user;
+
+            _countryCount = _model.CountryCount;
+            _userCount = _model.UserCount;
         }
 
         public void OpenDatabaseDirectory()

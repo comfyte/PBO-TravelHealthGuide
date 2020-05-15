@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:TravelHealthGuide.Views"
         mc:Ignorable="d"
         Title="Admin Console" Height="400" Width="800" Closing="AdminOptionsWindow_OnClosing" ResizeMode="CanMinimize"
-        Background="#FFE3F2FD" WindowStartupLocation="CenterOwner">
+        Background="#FFE3F2FD" WindowStartupLocation="CenterScreen">
     <Grid Margin="25">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -40,7 +40,7 @@
         </Grid.Resources>
         <GroupBox Grid.Column="0" Header="Country Data Management">
             <StackPanel>
-                <Label Content="There are currently 130 countries registered on database"/>
+                <Label Content="{Binding CountryCountText}"/>
                 <Button x:Name="AddCountryDataButton" Content="Add a country data" Click="AddCountryDataButton_Click"/>
                 <Button x:Name="ModifyCountryDataButton" Content="Modify a country data" Click="ModifyCountryDataButton_Click"/>
                 <Button x:Name="DeleteCountryButton" Content="Delete a country data" Click="DeleteCountryButton_Click"/>
@@ -50,7 +50,7 @@
         </GroupBox>
         <GroupBox Grid.Column="2" Header="User Management">
             <StackPanel>
-                <Label Content="There are 3 authorized users with admin access"/>
+                <Label Content="{Binding UserCountText}"/>
                 <Button x:Name="CreateUserButton" Content="Add new authorized user" Click="CreateUserButton_Click"/>
                 <Button x:Name="RemoveUserButton" Content="Remove an authorized user" Click="RemoveUserButton_Click"/>
                 <Button x:Name="ChangeUserPasswordButton" Content="Change my password" Click="ChangeUserPasswordButton_Click"/>

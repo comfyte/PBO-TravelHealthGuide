@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TravelHealthGuide.Views"
         mc:Ignorable="d"
-        Title="ModifyDestinationSelector" Height="150" Width="300" WindowStartupLocation="CenterScreen">
+        Title="Modify Destination Entry" Height="150" Width="300" WindowStartupLocation="CenterScreen"
+        Background="#FFE3F2FD" ResizeMode="NoResize">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>

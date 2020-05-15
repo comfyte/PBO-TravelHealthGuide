@@ -45,6 +45,7 @@ namespace TravelHealthGuide
             if (String.IsNullOrEmpty(LocationSearchBox.Text))
             {
                 GoButton.Opacity = 0.25;
+                GoButton.IsEnabled = false;
                 ClearAllButton.Visibility = Visibility.Collapsed;
             }
         }
@@ -75,11 +76,13 @@ namespace TravelHealthGuide
             if (String.IsNullOrEmpty(((ComboBox)sender).Text))
             {
                 GoButton.Opacity = 0.25;
+                GoButton.IsEnabled = false;
                 ClearAllButton.Visibility = Visibility.Collapsed;
             }
             else
             {
                 GoButton.Opacity = 1;
+                GoButton.IsEnabled = true;
                 ClearAllButton.Visibility = Visibility.Visible;
             }
         }

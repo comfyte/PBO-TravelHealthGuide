@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TravelHealthGuide.Views"
         mc:Ignorable="d"
-        Title="AddModifyDestinationInfoWindow" Height="500" Width="800" WindowStartupLocation="CenterScreen">
+        Title="Add or Modify Destination Entry" Height="500" Width="800" WindowStartupLocation="CenterScreen"
+        Background="#FFE3F2FD">
     <Grid Margin="25">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>

@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TravelHealthGuide.Views"
         mc:Ignorable="d"
-        Title="DiseaseInfoWindow" Height="450" Width="800" WindowStartupLocation="CenterOwner" Background="#FF607D8B" Loaded="DiseaseInfoWindow_Loaded">
+        Title="{Binding WindowTitle}" Height="450" Width="800" WindowStartupLocation="CenterOwner" Background="#FF607D8B" Loaded="DiseaseInfoWindow_Loaded" Icon="/globeicon.png">
     <Window.Resources>
         <Style x:Key="LightText" TargetType="Label">
             <Setter Property="Foreground" Value="White"/>
         </Style>
     </Window.Resources>
     <ScrollViewer VerticalScrollBarVisibility="Auto">
-        <Grid Margin="50, 25, 50, 25">
+        <Grid Margin="50, 25, 50, 40">
             
             <Grid.Resources>
                 <Style TargetType="Border">
@@ -50,16 +50,16 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/> <!--Country map-->
                 <RowDefinition Height="Auto"/>
                 <RowDefinition/>
+                <RowDefinition Height="25"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
-                <ColumnDefinition Width="25"/>
+                <ColumnDefinition Width="40"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
@@ -74,13 +74,12 @@
 
             </Grid>
 
-            <Label Grid.Row="1" Grid.ColumnSpan="3" Style="{StaticResource LightText}" HorizontalAlignment="Center" Content="Here is what you need to know before visiting."/>
-
-            <Border Grid.Row="2" Grid.ColumnSpan="3" Height="50"></Border>
+            <Label Grid.Row="1" Grid.ColumnSpan="3" Style="{StaticResource LightText}" HorizontalAlignment="Center" Content="Here is what you need to know before visiting."
+                   Margin="0,0,0,20" FontSize="14"/>
             
             <!--Left-->
-            <Label Grid.Row="3" Grid.Column="0" Style="{StaticResource LightText}" Content="Disease Risks"/>
-            <Border Grid.Row="4" Grid.Column="0" Grid.RowSpan="3">
+            <Label Grid.Row="2" Grid.Column="0" Style="{StaticResource LightText}" FontWeight="Bold" Content="Disease Risks"/>
+            <Border Grid.Row="3" Grid.Column="0" Grid.RowSpan="4">
                 <ListView ItemsSource="{Binding DiseaseRisks}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent">
                     <ListView.ItemTemplate>
                         <DataTemplate>
@@ -93,8 +92,8 @@
             </Border>
 
             <!--Right top-->
-            <Label Grid.Row="3" Grid.Column="2" Style="{StaticResource LightText}" Content="Vaccination Requirements"/>
-            <Border Grid.Row="4" Grid.Column="2">
+            <Label Grid.Row="2" Grid.Column="2" Style="{StaticResource LightText}" FontWeight="Bold" Content="Vaccination Requirements"/>
+            <Border Grid.Row="3" Grid.Column="2">
                 <ListView ItemsSource="{Binding VaccinationRequirements}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent">
                     <ListView.ItemTemplate>
                         <DataTemplate>
@@ -107,7 +106,7 @@
             </Border>
             
             <!--Right bottom-->
-            <Label Grid.Row="5" Grid.Column="2" Style="{StaticResource LightText}" Content="Recommended Actions"/>
+            <Label Grid.Row="5" Grid.Column="2" Style="{StaticResource LightText}" FontWeight="Bold" Content="Recommended Actions"/>
             <Border Grid.Row="6" Grid.Column="2">
                 <ListView ItemsSource="{Binding RecommendedActions}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent">
                     <ListView.ItemTemplate>

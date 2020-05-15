@@ -6,15 +6,15 @@
         xmlns:local="clr-namespace:TravelHealthGuide"
         mc:Ignorable="d"
         Title="Travel Health Guide"
-        Height="450"
-        Width="800"
+        Height="350"
+        Width="600"
         Loaded="MainWindow_Loaded"
         WindowStartupLocation="CenterScreen"
-        Background="#FFFAFAFA">
+        Background="#FFFAFAFA" Icon="/globeicon.png">
     <Grid>
-        <StackPanel Margin="100,0,100,0" VerticalAlignment="Center">
-            <Label Content="Hi, Traveler!" FontSize="30" FontWeight="Bold"/>
-            <Label Content="Where do you want to go next?" FontSize="18" FontWeight="Light"/>
+        <StackPanel Margin="75,0,75,0" VerticalAlignment="Center">
+            <Label Content="Hi, Traveler!" FontSize="28" FontWeight="Bold"/>
+            <Label Content="Where do you want to go next?" FontSize="16" FontWeight="Light"/>
             <Border CornerRadius="7.5" BorderThickness="0" Margin="0,15,0,0" Background="White">
                 <Border.Effect>
                     <DropShadowEffect
