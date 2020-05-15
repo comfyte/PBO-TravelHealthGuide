@@ -75,7 +75,7 @@
             </Grid>
 
             <Label Grid.Row="1" Grid.ColumnSpan="3" Style="{StaticResource LightText}" HorizontalAlignment="Center" Content="Here is what you need to know before visiting."
-                   Margin="0,0,0,20" FontSize="18"/>
+                   Margin="0,0,0,20" FontSize="18" FontWeight="Light"/>
             
             <!--Left-->
             <Label Grid.Row="2" Grid.Column="0" Style="{StaticResource LightText}" FontSize="14" FontWeight="Bold" Content="Disease Risks"/>
