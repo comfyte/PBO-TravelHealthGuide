@@ -43,14 +43,13 @@
                         <ColumnDefinition Width="{Binding ElementName=LocationSearchBox, Path=ActualHeight}" />
                         <ColumnDefinition Width="{Binding ElementName=LocationSearchBox, Path=ActualHeight}" />
                     </Grid.ColumnDefinitions>
-                    <!--<Grid.Resources>
-                        
-                    </Grid.Resources>-->
+
                     <ComboBox 
                         x:Name="LocationSearchBox"
                         Grid.Column="0"
                         IsEditable="True"
-                        Text=""
+                        ItemsSource="{Binding CountryList}"
+                        Text="{Binding Path=LocationSearchQuery, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}"
                         VerticalContentAlignment="Center"
                         Height="30"
                         Margin="10, 1, 0, 1"
@@ -109,12 +108,5 @@
                            Margin="5,0,0,0"/>
             </StackPanel>
         </Button>
-        <Label HorizontalAlignment="Right"
-               VerticalAlignment="Bottom"
-               Margin="10,10,20,10"
-               Padding="0"
-               FontSize="8"
-               Opacity="0.5"
-               Content="Background image by John on Unsplash"/>
     </Grid>
 </Window>

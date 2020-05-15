@@ -24,7 +24,17 @@ namespace TravelHealthGuide.Views
         {
             InitializeComponent();
             _viewmodel = new DiseaseInfoViewModel(countryName);
-            this.DataContext = _viewmodel;            
+            this.DataContext = _viewmodel;
+        }
+
+        private void DiseaseInfoWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (!_viewmodel.Success)
+            {
+                MessageBox.Show("\"" + _viewmodel.CountryName + "\" does not exist in database.", "Could not find country data", MessageBoxButton.OK, MessageBoxImage.Error);
+                this.Close();
+                Application.Current.MainWindow.Focus();
+            }
         }
     }
 }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TravelHealthGuide.Views"
         mc:Ignorable="d"
-        Title="DiseaseInfoWindow" Height="450" Width="800" WindowStartupLocation="CenterOwner" Background="#FF607D8B">
+        Title="DiseaseInfoWindow" Height="450" Width="800" WindowStartupLocation="CenterOwner" Background="#FF607D8B" Loaded="DiseaseInfoWindow_Loaded">
     <Window.Resources>
         <Style x:Key="LightText" TargetType="Label">
             <Setter Property="Foreground" Value="White"/>
@@ -31,22 +31,18 @@
                 </Style>
                 <Style TargetType="{x:Type ListView}">
                     <Setter Property="BorderThickness" Value="0"/>
+                    <Setter Property="Padding" Value="0,10,0,0"/>
                 </Style>
                 <Style TargetType="{x:Type ListViewItem}">
                     <Setter Property="BorderThickness" Value="0"/>
-                    <Setter Property="Background" Value="Gray"/>
-                    <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="LightGray"/>
-                        </Trigger>
-                        <Trigger Property="IsSelected" Value="True">
-                            <Setter Property="Foreground" Value="Black"/>
-                        </Trigger>
-                    </Style.Triggers>
+                    <Setter Property="Background" Value="#FFEEEEEE"/>
+                    <Setter Property="Margin" Value="10,0,10,10"/>
                     <Style.Resources>
                         <Style TargetType="Border">
                             <Setter Property="CornerRadius" Value="7.5"/>
                         </Style>
+                        <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="LightGray"/>
+                        <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="Black"/>
                     </Style.Resources>
                 </Style>
             </Grid.Resources>
@@ -83,13 +79,13 @@
             <Border Grid.Row="2" Grid.ColumnSpan="3" Height="50"></Border>
             
             <!--Left-->
-            <Label Grid.Row="3" Grid.Column="0" Style="{StaticResource LightText}" Content="Disease List"/>
+            <Label Grid.Row="3" Grid.Column="0" Style="{StaticResource LightText}" Content="Disease Risks"/>
             <Border Grid.Row="4" Grid.Column="0" Grid.RowSpan="3">
-                <ListView ItemsSource="{Binding LSoT}" Background="Transparent">
+                <ListView ItemsSource="{Binding DiseaseRisks}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <StackPanel>
-                                <Label Content="{Binding}"/>
+                                <TextBlock Text="{Binding}" TextWrapping="Wrap" Padding="5,5,5,5"/>
                             </StackPanel>
                         </DataTemplate>
                     </ListView.ItemTemplate>
@@ -98,11 +94,31 @@
 
             <!--Right top-->
             <Label Grid.Row="3" Grid.Column="2" Style="{StaticResource LightText}" Content="Vaccination Requirements"/>
-            <Border Grid.Row="4" Grid.Column="2"/>
+            <Border Grid.Row="4" Grid.Column="2">
+                <ListView ItemsSource="{Binding VaccinationRequirements}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <TextBlock Text="{Binding}" TextWrapping="Wrap" Padding="5,5,5,5"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Border>
             
             <!--Right bottom-->
             <Label Grid.Row="5" Grid.Column="2" Style="{StaticResource LightText}" Content="Recommended Actions"/>
-            <Border Grid.Row="6" Grid.Column="2"/>
+            <Border Grid.Row="6" Grid.Column="2">
+                <ListView ItemsSource="{Binding RecommendedActions}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <TextBlock Text="{Binding}" TextWrapping="Wrap" Padding="5,5,5,5"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Border>
             
         </Grid>
     </ScrollViewer>
