@@ -70,15 +70,15 @@
                     <ColumnDefinition Width="{Binding ElementName=HeaderContainer, Path=ActualHeight}"/>
                 </Grid.ColumnDefinitions>
 
-                <Label x:Name="CountryTitle" Grid.Column="1" Style="{StaticResource LightText}" HorizontalAlignment="Center" Content="{Binding Path=CountryName, FallbackValue='Could not load country name'}" FontWeight="Bold" FontSize="24"/>
+                <Label x:Name="CountryTitle" Grid.Column="1" Style="{StaticResource LightText}" HorizontalAlignment="Center" Content="{Binding Path=CountryName, FallbackValue='Could not load country name'}" FontWeight="Bold" FontSize="32"/>
 
             </Grid>
 
             <Label Grid.Row="1" Grid.ColumnSpan="3" Style="{StaticResource LightText}" HorizontalAlignment="Center" Content="Here is what you need to know before visiting."
-                   Margin="0,0,0,20" FontSize="14"/>
+                   Margin="0,0,0,20" FontSize="18"/>
             
             <!--Left-->
-            <Label Grid.Row="2" Grid.Column="0" Style="{StaticResource LightText}" FontWeight="Bold" Content="Disease Risks"/>
+            <Label Grid.Row="2" Grid.Column="0" Style="{StaticResource LightText}" FontSize="14" FontWeight="Bold" Content="Disease Risks"/>
             <Border Grid.Row="3" Grid.Column="0" Grid.RowSpan="4">
                 <ListView ItemsSource="{Binding DiseaseRisks}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent">
                     <ListView.ItemTemplate>
@@ -92,7 +92,7 @@
             </Border>
 
             <!--Right top-->
-            <Label Grid.Row="2" Grid.Column="2" Style="{StaticResource LightText}" FontWeight="Bold" Content="Vaccination Requirements"/>
+            <Label Grid.Row="2" Grid.Column="2" Style="{StaticResource LightText}" FontSize="14" FontWeight="Bold" Content="Vaccination Requirements"/>
             <Border Grid.Row="3" Grid.Column="2">
                 <ListView ItemsSource="{Binding VaccinationRequirements}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent">
                     <ListView.ItemTemplate>
@@ -106,7 +106,7 @@
             </Border>
             
             <!--Right bottom-->
-            <Label Grid.Row="5" Grid.Column="2" Style="{StaticResource LightText}" FontWeight="Bold" Content="Recommended Actions"/>
+            <Label Grid.Row="5" Grid.Column="2" Style="{StaticResource LightText}" FontSize="14" FontWeight="Bold" Content="Recommended Actions"/>
             <Border Grid.Row="6" Grid.Column="2">
                 <ListView ItemsSource="{Binding RecommendedActions}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Transparent">
                     <ListView.ItemTemplate>

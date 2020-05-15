@@ -48,9 +48,9 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <Label Grid.Row="0" Content="Vaccination Requirements"/>
-            <TextBox Text="{Binding Path=VaccinationRequirements}" Grid.Row="1"/>
+            <TextBox Text="{Binding Path=VaccinationRequirements}" Grid.Row="1" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"/>
             <Label Grid.Row="2" Content="Recommended Actions"/>
-            <TextBox Text="{Binding Path=RecommendedActions}" Grid.Row="3"/>
+            <TextBox Text="{Binding Path=RecommendedActions}" Grid.Row="3" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"/>
         </Grid>
         <StackPanel Grid.Row="2" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Button Content="Save Changes" Padding="10,5,10,5" Click="SaveChangesButton_Click"/>
