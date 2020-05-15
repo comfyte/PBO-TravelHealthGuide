@@ -24,8 +24,11 @@ namespace TravelHealthGuide.Models.DatabaseModels
         // Default values
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            DestinationsSeed seed = new DestinationsSeed();
-            modelBuilder.Entity<DestinationInfo>().HasData(seed.Items);
+            DestinationsSeed destinationsSeed = new DestinationsSeed();
+            modelBuilder.Entity<DestinationInfo>().HasData(destinationsSeed.Items);
+
+            UsersSeed usersSeed = new UsersSeed();
+            modelBuilder.Entity<UserInfo>().HasData(usersSeed.Items);
         }
     }
 }

@@ -16,9 +16,9 @@
         </Grid.RowDefinitions>
         <Label Grid.Row="0" Content="Admin Access" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <StackPanel Grid.Row="1" Margin="25, 0, 25, 0" VerticalAlignment="Center">
-            <Label Content="_Username" FontWeight="Bold" Target="{Binding ElementName=UsernameField}" Padding="0,0,0,5"/>
+            <Label Content="_Username (default: admin)" FontWeight="Bold" Target="{Binding ElementName=UsernameField}" Padding="0,0,0,5"/>
             <TextBox x:Name="UsernameField" Text="{Binding Path=Username, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}"/>
-            <Label Content="_Password" FontWeight="Bold" Target="{Binding ElementName=PasswordField}" Padding="0,15,0,5"/>
+            <Label Content="_Password (default: admin)" FontWeight="Bold" Target="{Binding ElementName=PasswordField}" Padding="0,15,0,5"/>
             <PasswordBox x:Name="PasswordField"/>
         </StackPanel>
         <Button Grid.Row="2" Content="Authenticate" IsDefault="True" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10, 5, 10, 5" Click="Button_Click"/>
