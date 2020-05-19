@@ -1,4 +1,4 @@
-# PBO-TravelHealthGuide
+# Travel Health Guide
 Tugas Akhir Kelompok Mata Kuliah Pemrograman Berorientasi Objek DTETI FT UGM
 
 ## Deskripsi Singkat
