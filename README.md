@@ -2,7 +2,7 @@
 Tugas Akhir Kelompok Mata Kuliah Pemrograman Berorientasi Objek DTETI FT UGM
 
 ## Deskripsi Singkat
-Aplikasi ini dibuat menggunakan bahasa pemrograman C#, berbasis *UI framework* Windows Presentation Foundation (WPF), dan dibangun di atas platform .NET Core. Dalam menyusun aplikasi ini, kami mencoba menerapkan *design pattern* Model-View-ViewModel (MVVM). Proyek utama terletak di direktori `TravelHealthGuide/`.
+Aplikasi ini dibuat menggunakan bahasa pemrograman C#, berbasis *UI framework* Windows Presentation Foundation (WPF), dan dibangun di atas platform .NET Core. Dalam menyusun aplikasi ini, kami mencoba menerapkan *design pattern* Model-View-ViewModel (MVVM). Proyek utama terletak di direktori [`TravelHealthGuide/`](TravelHealthGuide/).
 
 ## Anggota Kelompok dan Peran Masing-Masing
 
