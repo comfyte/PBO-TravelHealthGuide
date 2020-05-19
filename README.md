@@ -7,18 +7,18 @@ Aplikasi ini dibuat menggunakan bahasa pemrograman C#, berbasis *UI framework* W
 ## Anggota Kelompok dan Peran Masing-Masing
 
 ### Muhammad Afdiansyah (19/444060/TK/49256)
-- Planning awal
-- Menyiapkan dan mengadministrasi database
-- Usability testing
+- *Planning* awal
+- Menyiapkan dan mengadministrasi *database*
+- *Usability testing*
 
 ### Muhammad Fariz Al-Pasha (19/444061/TK/49257)
-- Planning awal
-- Menyiapkan dan mengadministrasi database
-- QA testing
+- *Planning* awal
+- Menyiapkan dan mengadministrasi *database*
+- *QA testing*
 
 ### Muhammad Farrel Rafirizqy (19/444062/TK/49258)
-- Planning awal
-- Menyusun kode business logic
-- Menyusun user interface
-- Mengatur dan mengadministrasi database
-- Menerapkan structural design pattern (MVVM)
+- *Planning* awal
+- Menyusun kode *business logic*
+- Menyusun *user interface*
+- Mengatur dan mengadministrasi *database*
+- Menerapkan *structural design pattern* MVVM
